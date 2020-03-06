@@ -1,6 +1,10 @@
 package com.zhanglei.hgshop.service;
 
+import java.util.List;
+
+import com.github.pagehelper.PageInfo;
 import com.zhanglei.hgshop.pojo.Brand;
+import com.zhanglei.hgshop.pojo.Category;
 
 /** 
 * @ClassName: GoodsSErvice 
@@ -11,21 +15,31 @@ import com.zhanglei.hgshop.pojo.Brand;
 public interface GoodsService {
 
 	
-	/**
-	 * @param Brand
-	 * @return int
-	 */
 	int addBrand(Brand brand);
-	
-	/**
-	 * @param Brand
-	 * @return int
-	 */
 	int updateBrand(Brand brand);
-	
-	/**
-	 * @param id
-	 * @return int
-	 */
 	int deleteBrand(Integer id);
+	/**
+	 * 
+	 * @param firstChar 首字母
+	 * @param page 页码
+	 * @return
+	 */
+	PageInfo<Brand> listBrand( String firstChar,int page); 
+	
+	
+	int addCategory(Category category);
+	int updateCategory(Category category);
+	int deleteCategory(Integer id);
+	/**
+	 * 
+	 * @param firstChar 首字母
+	 * @param page 页码
+	 * @return
+	 */
+	PageInfo<Category> listCategory( String firstChar,int page); 
+	/**
+	 * 以树的形式显示列表
+	 * @return
+	 */
+	List<Category> treeCategory(); 
 }
