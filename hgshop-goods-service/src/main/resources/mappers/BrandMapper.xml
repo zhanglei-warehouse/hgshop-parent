@@ -40,4 +40,9 @@
    <update id="update">
    		update hg_brand set name = #{name},first_Char=#{firstChar} where id=#{id}
    </update>
+   
+   <select id="findById" resultType="brand">
+		select id,name,first_char firstChar from hg_brand 
+		  where id=#{value}
+	</select>
 </mapper>

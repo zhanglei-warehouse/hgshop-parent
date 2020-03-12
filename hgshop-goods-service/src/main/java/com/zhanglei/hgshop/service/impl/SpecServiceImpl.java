@@ -103,5 +103,9 @@ public class SpecServiceImpl implements SpecService{
 		int j = specDao.deleteSpecOptionBatch(ids);
 		return (i+j);
 	}
+	@Override
+	public List<Spec> listAll() {
+		return specDao.listAll();
+	}
 
 }

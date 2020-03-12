@@ -1,5 +1,7 @@
 package com.zhanglei.hgshop.service;
 
+import java.util.List;
+
 import com.github.pagehelper.PageInfo;
 import com.zhanglei.hgshop.pojo.Spec;
 
@@ -33,4 +35,12 @@ public interface SpecService {
 	 * @return
 	 */
 	int deleteBatch(int[] id);
+	
+	/**
+	 * 获取所有的规格名称
+	 * @param name
+	 * @param page
+	 * @return
+	 */
+	List<Spec> listAll();
 }

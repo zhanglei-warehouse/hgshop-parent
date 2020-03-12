@@ -13,7 +13,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 */
 public class Category implements Serializable{
 
-private Integer id; // 
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = -780653814722373326L;
+
+	private Integer id; // 
 	
 	private Integer parentId; // 上一级别分类的id  parent_id
 	

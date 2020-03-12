@@ -5,6 +5,9 @@ import java.util.List;
 import com.github.pagehelper.PageInfo;
 import com.zhanglei.hgshop.pojo.Brand;
 import com.zhanglei.hgshop.pojo.Category;
+import com.zhanglei.hgshop.pojo.Sku;
+import com.zhanglei.hgshop.pojo.Spu;
+import com.zhanglei.hgshop.pojo.SpuVo;
 
 /** 
 * @ClassName: GoodsSErvice 
@@ -15,16 +18,7 @@ import com.zhanglei.hgshop.pojo.Category;
 public interface GoodsService {
 
 	
-	int addBrand(Brand brand);
-	int updateBrand(Brand brand);
-	int deleteBrand(Integer id);
-	/**
-	 * 
-	 * @param firstChar 首字母
-	 * @param page 页码
-	 * @return
-	 */
-	PageInfo<Brand> listBrand( String firstChar,int page); 
+	
 	
 	
 	int addCategory(Category category);
@@ -42,4 +36,28 @@ public interface GoodsService {
 	 * @return
 	 */
 	List<Category> treeCategory(); 
+	
+	List<Brand> getAllBrands();
+	
+	// spu的管理
+		PageInfo<Spu>  listSpu(int page,SpuVo vo);
+		int addSpu(Spu spu);
+		int updateSpu(Spu spu);
+		int deleteSpu(int id);
+		Spu getSpu(int id);
+		int deleteSpuBatch(int[] id);
+		
+		// sku的管理
+		PageInfo<Sku>  listSku(int page,Sku sku);
+		int addSku(Sku sku);
+		Sku getSku(int id);//获取详情
+		int updateSku(Sku sku);
+		int deleteSku(int id);
+		int deleteSkuBatch(int[] id);
+		/**
+		 * 根据spu 获取所有的sku
+		 * @param spuId
+		 * @return
+		 */
+		List<Sku> listSkuBySpu(int spuId);
 }

@@ -31,5 +31,7 @@ public interface SpecDao {
 
 	int deleteSpecOptionBatch(int[] ids);
 
+	List<Spec> listAll();
+
 
 }
